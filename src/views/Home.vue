@@ -1,13 +1,19 @@
 <template>
-  <HelloWorld />
+  <h2>Bem Vindo!</h2>
 </template>
 
 <script>
-import HelloWorld from '../components/HelloWorld';
-
 export default {
-  components: {
-    HelloWorld,
+data(){return{
+}},
+  created(){
+    this.getPeople();
   },
+    methods: {
+     getPeople () {
+      let vm = this;
+      this.$store.dispatch('fetchPessoas');
+    },
+}
 };
 </script>
